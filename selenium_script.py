@@ -22,9 +22,9 @@ driver = webdriver.Chrome(service=service)
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 
-MONGO_URI = "mongodb+srv://siddhunioh7:admin@clusters0.pwmqglw.mongodb.net/?retryWrites=true&w=majority&appName=clusters0"
+MONGO_URI = "mongodb+srv://<username>:<password>@clusters0.pwmqglw.mongodb.net/?retryWrites=true&w=majority&appName=clusters0"
 client = MongoClient(MONGO_URI)
-db = client.get_database("sid")  
+db = client.get_database("database_name")  
 collection = db.get_collection("trending_topics")  
 
 # Proxy and Selenium Setup

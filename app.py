@@ -5,9 +5,9 @@ import subprocess
 app = Flask(__name__)
 
 
-MONGO_URI = "mongodb+srv://siddhunioh7:admin@clusters0.pwmqglw.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URI = "mongodb+srv://<username>:<password>@clusters0.pwmqglw.mongodb.net/?retryWrites=true&w=majority"
 client = MongoClient(MONGO_URI)
-db = client.get_database("sid")
+db = client.get_database("database_name")
 collection = db.get_collection("trending_topics")
 
 @app.route("/")
