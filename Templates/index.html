@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Trends</title>
+</head>
+<body>
+    <button onclick="fetchTrends()">Click here to run the script</button>
+    <div id="result"></div>
+
+    <script>
+        function fetchTrends() {
+            fetch('/run-script', { method: 'POST' })
+                .then(() => fetch('/get-trends'))
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML = `
+                        <p>These are the most happening topics as on ${data.datetime}</p>
+                        <ul>
+                            <li>${data.nameoftrend1}</li>
+                            <li>${data.nameoftrend2}</li>
+                            <li>${data.nameoftrend3}</li>
+                            <li>${data.nameoftrend4}</li>
+                            <li>${data.nameoftrend5}</li>
+                        </ul>
+                        <p>The IP address used for this query was ${data.ip_address}</p>
+                        <pre>${JSON.stringify(data, null, 2)}</pre>
+                    `;
+                });
+        }
+    </script>
+
+    <a onclick="fetchTrends()" style="color: blue;cursor: pointer;">Click here to run the query again</a>
+</body>
+</html>
