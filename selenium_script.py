@@ -73,7 +73,7 @@ def fetch_trends():
             next_button.click()
             time.sleep(2)  
             password_field = driver.find_element(By.XPATH, "//input[@name='password']")
-            password_field.send_keys("@HVNSking.123")
+            password_field.send_keys("YOUR PASSWORD")
 
         
         # logging.info("Locating password field...")
