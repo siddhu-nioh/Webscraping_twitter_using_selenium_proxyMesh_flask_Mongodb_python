@@ -47,7 +47,7 @@ def fetch_trends():
         
         logging.info("Locating username field...")
         username = driver.find_element(By.XPATH, "//input[@name='text']")
-        username.send_keys("@NARUTO488461128")
+        username.send_keys("YOUR USERNAME")
         
         
         logging.info("Clicking Next button after entering username...")
@@ -61,12 +61,12 @@ def fetch_trends():
             logging.info("Checking for password field...")
             password_field = driver.find_element(By.XPATH, "//input[@name='password']")
             logging.info("Password field found, entering password...")
-            password_field.send_keys("@HVNSking.123")
+            password_field.send_keys("YOUR PASSWORD")
         except:
             
             logging.info("Password field not found, entering email due to unusual activity...")
             email_field = driver.find_element(By.XPATH, "//input[@name='text']")
-            email_field.send_keys("sidddhunioh0007@gmail.com")
+            email_field.send_keys("YOURGMAIL@gmail.com")
             logging.info("Clicking Next button after entering email...")
             next_button = driver.find_element(By.XPATH, "//span[text()='Next']")
         
